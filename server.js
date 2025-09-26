@@ -6,8 +6,6 @@ const dbconnect = require('./config/db.config');
 // const jwt = require('jsonwebtoken');
 // const { auth } = require('./middleware/auth.middleware');
 
-const authRoutes = require("./routes/auth.route");
-
 dotenv.config();
 
 dbconnect();
@@ -18,7 +16,7 @@ app.use(express.json());
 // const{PORT} = process.env
 const {PORT, JWT_SECRET} = process.env;
 
-app.use("/api", authRoutes);
+app.use("/api", require("./routes"));
 
 // register endpoint\
 

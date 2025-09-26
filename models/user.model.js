@@ -22,8 +22,21 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['user', 'admin'],
         default: 'user',
+    },
+    phone: {
+        type: String,
+        trim: true,
+        default: ""
+    },
+    address: {
+        type: String,
+        trim: true,
+        default: ""
+    },
+    isVerified: {
+        type: Boolean,
+        default: false
     }
-
 }, {timestamps: true})
 
 module.exports = mongoose.model('User', userSchema);

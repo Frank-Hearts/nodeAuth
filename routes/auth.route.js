@@ -9,6 +9,10 @@ const AuthController = require('../controllers/auth.controller');
 
 router.post("/register", AuthController.register);
 router.post("/login", AuthController.login);
+router.post("/verify-email", AuthController.verifyEmail);
+router.post("/resend-token", AuthController.resendEmailToken);
+router.post("/request-password-reset-token", AuthController.requestPasswordReset);
+router.post("/reset-password", AuthController.resetPassword);
 
 //protected route
 router.get("/profile", auth, AuthController.getProfile);
